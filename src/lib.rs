@@ -280,15 +280,15 @@ pub enum SupportedBufferSize {
 /// [`Device::supported_input/output_configs`](traits::DeviceTrait#required-methods) method.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct SupportedStreamConfigRange {
-    pub(crate) channels: ChannelCount,
+    pub channels: ChannelCount,
     /// Minimum value for the samples rate of the supported formats.
-    pub(crate) min_sample_rate: SampleRate,
+    pub min_sample_rate: SampleRate,
     /// Maximum value for the samples rate of the supported formats.
-    pub(crate) max_sample_rate: SampleRate,
+    pub max_sample_rate: SampleRate,
     /// Buffersize ranges supported by the device
-    pub(crate) buffer_size: SupportedBufferSize,
+    pub buffer_size: SupportedBufferSize,
     /// Type of data expected by the device.
-    pub(crate) sample_format: SampleFormat,
+    pub sample_format: SampleFormat,
 }
 
 /// Describes a single supported stream configuration, retrieved via either a
@@ -296,10 +296,10 @@ pub struct SupportedStreamConfigRange {
 /// [`Device::default_input/output_config`](traits::DeviceTrait#required-methods) methods.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct SupportedStreamConfig {
-    channels: ChannelCount,
-    sample_rate: SampleRate,
-    buffer_size: SupportedBufferSize,
-    sample_format: SampleFormat,
+    pub channels: ChannelCount,
+    pub sample_rate: SampleRate,
+    pub buffer_size: SupportedBufferSize,
+    pub sample_format: SampleFormat,
 }
 
 /// A buffer of dynamically typed audio data, passed to raw stream callbacks.
